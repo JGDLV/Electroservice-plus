@@ -1,0 +1,366 @@
+html
+  height: 100%
+  box-sizing: border-box
+
+*, *::before, *::after
+  margin: 0
+  padding: 0
+  outline: 0
+  border: 0
+  box-sizing: inherit
+
+ul
+  list-style: none
+
+button, label, select, input[type="submit"]
+  cursor: pointer
+
+input, textarea, select, button
+  font-family: inherit
+  font-size: inherit
+  font-weight: inherit
+  color: inherit
+
+img
+  max-width: 100%
+  height: auto
+
+input[type="radio"], input[type="checkbox"]
+  position: absolute
+  opacity: 0
+
+a
+  text-decoration: none
+
+a,
+a::before,
+a::after,
+button,
+button::before,
+button::after,
+.slick-dots li,
+input[type="submit"]
+  transition: all .5s ease
+
+#top
+  width: 50px
+  height: 50px
+  position: fixed
+  bottom: 40px
+  right: 40px
+  cursor: pointer
+  display: none
+  border-radius: 50%
+  transition: background .5s ease
+  z-index: 100
+
+.modal-popup-block
+  background: #FFF
+  max-width: 600px
+  margin: auto
+  padding: 30px
+  text-align: center
+  position: relative
+
+  .mfp-close
+    color: #000 !important
+
+.menu-toggle
+  margin: 10px 0
+  width: 50px
+  height: 45px
+  display: none
+  align-items: center
+  justify-content: center
+  border: 1px solid rgba(255, 255, 255, 0.25)
+  cursor: pointer
+
+.icon-toggle
+  width: 30px
+  height: 25px
+  position: relative
+  display: flex
+  align-items: center
+
+  span
+    position: absolute
+    width: 100%
+    height: 5px
+    border-radius: 2px
+    background: #FFF
+    transition: .3s
+    left: 0
+
+    &:first-child
+      top: 0
+
+    &:last-child
+      bottom: 0
+
+  &.active span
+
+    &:first-child
+      top: auto
+      transform: rotate(45deg)
+
+    &:last-child
+      bottom: auto
+      transform: rotate(-45deg)
+
+    &:nth-child(2)
+      display: none
+
+.slick-arrow
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  // border-radius: 50%
+  font-size: 0
+  z-index: 10
+
+  &.slick-prev
+    left: 0
+
+  &.slick-next
+    right: 0
+
+  // i
+  //   border: solid #000
+  //   border-width: 0 3px 3px 0
+  //   display: inline-block
+  //   padding: 6px
+  //   position: absolute
+  //   top: 50%
+  //   left: 50%
+
+  //   &.arrow-left
+  //     transform: translateY(-50%) translateX(-50%) rotate(135deg)
+  //     -webkit-transform: translateY(-50%) translateX(-50%) rotate(135deg)
+
+  //   &.arrow-right
+  //     transform: translateY(-50%) translateX(-50%) rotate(-45deg)
+  //     -webkit-transform: translateY(-50%) translateX(-50%) rotate(-45deg)
+
+// Animations
+
+.a-btn-v
+  position: relative
+  overflow: hidden
+
+  span
+    z-index: 10
+    position: relative
+
+  &::before, &::after
+    @include pseudo
+    left: 0
+    width: 100%
+    height: 0
+    z-index: 0
+
+  &::before
+    top: 50%
+
+  &::after
+    bottom: 50%
+
+  &:hover::before, &:hover::after
+    height: 50%
+
+.a-btn-h
+  position: relative
+  overflow: hidden
+
+  span
+    z-index: 10
+    position: relative
+
+  &::before, &::after
+    @include pseudo
+    top: 0
+    height: 100%
+    width: 0
+    z-index: 0
+
+  &::before
+    left: 50%
+
+  &::after
+    right: 50%
+
+  &:hover::before, &:hover::after
+    width: 50%
+
+.a-btn-r
+  position: relative
+  overflow: hidden
+
+  span
+    z-index: 10
+    position: relative
+
+  &::after
+    @include pseudo
+    width: 0
+    height: 0
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    z-index: 0
+    background: #000
+
+  &:hover::after
+    width: 100%
+    height: 100%
+
+.a-social
+  position: relative
+
+  &::before
+    z-index: 10
+    position: relative
+
+  &::after
+    @include pseudo
+    width: 0
+    height: 0
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    z-index: 0
+
+  &:hover::after
+    width: 100%
+    height: 100%
+
+.a-uline
+  position: relative
+
+  &::before, &::after
+    @include pseudo
+    bottom: -2px
+    height: 1px
+    width: 0
+    transition: width .5s ease
+
+  &::before
+    left: 0
+
+  &::after
+    right: 0
+    background: #000
+
+  &:hover::before
+    width: 100%
+    transition: width .5s ease
+    background: #000
+
+  &:hover::after
+    width: 100%
+    background: transparent
+    transition: width 0s ease
+
+.a-color
+  position: relative
+
+  &:hover
+    color: transparent
+
+  &::before
+    @include pseudo
+    content: attr(data-name)
+    max-width: 0
+    white-space: nowrap
+    overflow: hidden
+    left: 0
+    color: red
+
+  &:hover::before
+    max-width: 100%
+
+.a-rotate
+  position: relative
+  overflow: hidden
+
+  span
+    display: inline-block
+    transition: .5s ease
+
+  &:hover span
+    transform: translateY(100%)
+    opacity: 0
+
+  &::before, &::after
+    @include pseudo
+    opacity: 0
+
+  &::before
+    content: attr(data-name)
+    transform: translateY(-100%)
+    z-index: 20
+
+  &:hover::before
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes drop
+
+  100%
+    opacity: 0
+    width: 120%
+    height: 120%
+
+@keyframes drop40px
+
+  100%
+    opacity: 0
+    width: 40px
+    height: 40px
+
+.a-drop
+  position: relative
+  z-index: 0
+
+  &::before
+    z-index: 10
+
+  &::after
+    @include pseudo
+    width: 0
+    height: 0
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    z-index: 0
+    border-radius: 50%
+    background: #000
+
+  &:hover::after
+    animation: drop 1s ease
+    animation-fill-mode: forwards
+
+@keyframes shine
+
+  100%
+    left: 200%
+
+.a-shine
+  position: relative
+  overflow: hidden
+  z-index: 0
+
+  span
+    z-index: 20
+
+  &::after
+    @include pseudo
+    width: 100%
+    height: 100%
+    top: 0
+    z-index: 10
+    left: -100%
+    background: linear-gradient(to right, rgba(#ffffff, 0) 0%, rgba(#ffffff, .9) 100%)
+
+  &:hover::after
+    animation: shine 1s ease
+    animation-fill-mode: forwards

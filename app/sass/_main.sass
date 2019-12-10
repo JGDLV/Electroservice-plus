@@ -1,0 +1,888 @@
+$text: #74839c
+$text-dark: #243154
+$blue: #46c5fc
+$red: #e72f43
+$yellow: #ffc612
+$bg: #e5edf7
+$arrow: #e1ecfa
+
+body
+  font-family: 'Harmonia', sans-serif
+  color: $text
+  font-size: 18px
+  line-height: calc(30 / 18)
+
+.container
+  max-width: 1230px
+  padding: 0 30px
+  margin: 0 auto
+
+.btn
+  width: 270px
+  height: 60px
+  font-size: 24px
+  font-weight: 700
+  line-height: 60px
+  display: block
+  text-align: center
+  border-radius: 4px
+
+.price
+  display: inline-block
+  font-size: 24px
+  line-height: 50px
+  color: #000000
+  font-weight: 700
+  height: 50px
+  background-color: $yellow
+  padding: 0 15px
+  border-radius: 4px
+  position: relative
+  margin-left: 10px
+
+  span
+    position: relative
+    z-index: 10
+
+  &::before, &::after
+    @include pseudo
+    width: 28px
+    height: 28px
+    border-radius: 50%
+    background-color: $yellow
+    top: 50%
+    transform: translateY(-50%)
+    z-index: 0
+
+  &::before
+    left: -10px
+
+  &::after
+    right: -10px
+
+.main-header
+  background: url('../img/header-bg.png') no-repeat top center
+  background-size: cover
+  color: #ffffff
+
+  &-top
+    padding: 19px 0 35px
+
+    &__inner
+      @include flex
+      justify-content: space-between
+      align-items: flex-start
+
+  &__email
+    line-height: 20px
+    padding-left: 35px
+    margin-top: 25px
+    position: relative
+    margin-left: 67px
+
+    &::before
+      @include pseudo
+      width: 25px
+      height: 20px
+      background: url('../img/icon-email.svg') no-repeat center
+      top: 0
+      left: 0
+
+    &-link
+      color: #ffffff
+      font-size: 18px
+      font-weight: 700
+      border-bottom: 1px solid #ffffff
+
+      &:hover
+        border-bottom-color: transparent
+
+  &__contacts
+    text-align: right
+    margin-top: 20px
+
+  &__phone
+    color: #ffffff
+    font-size: 24px
+    font-weight: 700
+    line-height: 20px
+
+    &::before
+      line-height: 29px
+      top: 0
+      color: $yellow
+
+  &__whours
+    opacity: 0.5
+    font-size: 14px
+    line-height: 20px
+    margin-top: -4px
+
+.logo
+
+  &__link
+    color: #ffffff
+    font-size: 48px
+    font-weight: 600
+    line-height: 1
+    text-transform: uppercase
+
+    span
+      color: #ff1d1d
+
+.tagline
+  opacity: 0.5
+  font-size: 14px
+  line-height: 20px
+  margin-top: -4px
+
+.main-menu
+  position: relative
+  background-color: $blue
+  border-radius: 4px
+  overflow: hidden
+
+  &-items
+    @include flex
+
+  &__item
+    flex-grow: 1
+
+  &__link
+    display: block
+    color: #ffffff
+    font-size: 24px
+    font-weight: 700
+    line-height: 60px
+    text-align: center
+    position: relative
+    z-index: 10
+
+  &-hover
+    position: absolute
+    background: #20aeee
+    top: 0
+    left: 0
+    z-index: 0
+    transition: .5s ease
+
+.intro
+  padding: 148px 0 51px
+  text-align: center
+
+  &__header
+    font-size: 60px
+    font-weight: 900
+    line-height: 1
+    margin-bottom: 32px
+
+  &__subheader
+    width: 371px
+    height: 60px
+    font-size: 36px
+    font-weight: 700
+    line-height: 54px
+    text-align: center
+    margin: 0 auto 137px
+    background: url('../img/intro-subheader-bg.png') no-repeat center
+
+  &-form
+    @include flex
+    justify-content: space-between
+
+    &__header
+      width: 100%
+      text-align: left
+      font-size: 24px
+      font-weight: 700
+      line-height: 30px
+      margin-bottom: 33px
+
+    &__name, &__phone, &-select
+      width: 270px
+      height: 60px
+      border-radius: 4px
+      color: $text
+      font-size: 16px
+
+    &__name, &__phone
+      background-color: #ffffff
+      padding: 0 15px
+
+      &::placeholder
+        color: $text
+
+    &-select
+      width: 270px
+      height: 60px
+      background-color: #ffffff
+      cursor: pointer
+      text-align: left
+      position: relative
+
+      &::before
+        @include pseudo
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 6px 6px 0 6px
+        border-color: #b4bbc7 transparent transparent transparent
+        top: 50%
+        transform: translateY(-50%)
+        right: 15px
+
+      &.active
+
+        &::before
+          border-width: 0 6px 6px 6px
+          border-color: transparent transparent #b4bbc7 transparent
+
+      &-items
+        background-color: #ffffff
+        display: none
+        position: absolute
+        z-index: 20
+        top: 100%
+        left: 0
+        right: 0
+        border-radius: 0 0 4px 4px
+
+      &__item
+        padding: 7px 15px
+        border-top: 1px solid rgba($text, .2)
+        font-size: 16px
+
+        &:hover
+          background: rgba($text, .2)
+
+        &:last-child
+          border-bottom: 1px solid rgba($text, .2)
+
+      &__current
+        line-height: 60px
+        padding: 0 15px
+
+    &__submit
+      background-color: $yellow
+      color: #000000
+
+      &::before, &::after
+        background: darken($yellow, 7%)
+
+    &__file
+      font-weight: 700
+      line-height: 1
+      padding-left: 20px
+      position: relative
+      margin-top: 25px
+
+      &::before
+        @include pseudo
+        background: url('../img/icon-clip.svg') no-repeat center
+        width: 14px
+        height: 16px
+        top: 0
+        left: 0
+
+      span
+        border-bottom: 1px dashed rgba(255, 255, 255, .5)
+        transition: .5s ease
+
+        &:hover
+          border-bottom-color: transparent
+
+      input
+        display: none
+
+    &__text
+      margin-top: 19px
+
+h2
+  font-size: 48px
+  font-weight: 900
+  line-height: 60px
+  text-align: center
+  text-align: center
+
+.promo
+  padding: 53px 0 0
+
+  &__header
+    color: $red
+
+  &__inner
+    @include flex
+    justify-content: space-between
+    align-items: flex-start
+
+  &__image-part
+    width: 460px
+    margin-top: -26px
+    line-height: 0
+
+  &__text-part
+    width: 670px
+    padding-top: 54px
+
+  &__text_big
+    color: $text-dark
+    font-size: 36px
+    font-weight: 500
+    line-height: 40px
+    margin-bottom: 12px
+
+.cost
+
+  &__header
+    color: #ffffff
+    background-color: $blue
+    line-height: 100px
+    position: relative
+
+    &::after
+      @include pseudo
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 15px 15px 0 15px
+      border-color: $blue transparent transparent transparent
+      left: 50%
+      transform: translateX(-50%)
+      bottom: -14px
+      z-index: 10
+
+  &-items
+    @include flex
+    justify-content: center
+    align-items: flex-start
+
+  &__item
+    width: 50%
+    max-width: 960px
+    position: relative
+    color: #ffffff
+    height: 600px
+
+    &-image-part
+      position: absolute
+      z-index: 0
+      line-height: 0
+      height: 100%
+
+      &::before
+        @include pseudo
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(to bottom, rgba(#000000, .5), transparent, rgba(#000000, .5))
+
+    &-image
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+    &-text-part
+      position: relative
+      z-index: 10
+      padding: 29px 50px 130px 52px
+      height: 100%
+
+    &-header
+      font-size: 36px
+      font-weight: 700
+      line-height: 1
+      margin-bottom: 12px
+
+    &-text
+      color: #eaebed
+      font-size: 24px
+      line-height: 30px
+      min-height: 90px
+
+    &-bottom
+      @include flex
+      align-items: center
+      position: absolute
+      bottom: 43px
+
+    &-price
+      margin-right: 25px
+
+    &-info
+      font-size: 24px
+      line-height: 1
+
+  &-text-block
+    background: $blue
+    color: #ffffff
+
+    &__inner
+      @include flex
+      justify-content: space-between
+      align-items: center
+
+    &__text
+      font-size: 24px
+      font-weight: 700
+      line-height: 100px
+      position: relative
+      padding-left: 49px
+
+      &::before
+        @include pseudo
+        width: 41px
+        height: 32px
+        background: url('../img/icon-label.svg') no-repeat center
+        top: 50%
+        transform: translateY(-50%)
+        left: 0
+
+    &__button
+      background-color: #ffffff
+      color: $blue
+
+      &:hover
+        color: #ffffff
+        box-shadow: 0 0 0 1px rgba(#ffffff, .5)
+
+      &::before, &::after
+        @include dark($blue)
+
+.features
+  padding: 53px 0 61px
+
+  &__header
+    color: $red
+    margin-bottom: 4px
+
+  &__subheader
+    color: $text-dark
+    font-size: 36px
+    font-weight: 500
+    line-height: 60px
+    text-align: center
+    margin-bottom: 53px
+
+  &-items
+    @include flex
+    justify-content: space-between
+    align-items: flex-start
+
+  &__item
+    width: calc(100% / 3 - 15px)
+    text-align: center
+
+    &-image-part
+      width: 170px
+      height: 170px
+      border: 2px solid $red
+      border-radius: 50%
+      @include flex
+      justify-content: center
+      align-items: center
+      margin: 0 auto 17px
+
+    &-header
+      color: $text-dark
+      font-size: 24px
+      font-weight: 700
+      line-height: 30px
+      margin-bottom: 12px
+
+.additional
+  padding: 37px 0 57px
+  background: $bg
+
+  &__header
+    text-align: left
+    color: $red
+    font-size: 36px
+    font-weight: 500
+    line-height: 60px
+    margin-bottom: 20px
+
+  &__subheader
+    color: $text-dark
+    font-size: 24px
+    font-weight: 700
+    line-height: 30px
+    margin-bottom: 2px
+
+  &__text
+    margin-bottom: 18px
+
+  &__inner
+    @include flex
+    justify-content: space-between
+    align-items: flex-start
+
+  &__text-part
+    width: 700px
+
+  &__image-part
+    width: 353px
+    margin-top: -15px
+    line-height: 0
+
+.specials
+  padding: 53px 0 72px
+
+  &__header
+    color: $red
+    margin-bottom: 20px
+
+  &-items
+    padding: 0 90px
+
+  .slick-arrow
+    width: 50px
+    height: 50px
+    border: 2px solid $arrow
+    border-radius: 50%
+    background: transparent
+    color: $arrow
+    line-height: 46px
+    text-align: center
+    font-size: 20px
+
+    &:hover
+      border-color: $red
+
+      &::before
+        color: $red
+
+    &.slick-prev::before
+      margin-left: -2px
+
+    &.slick-next::before
+      margin-right: -2px
+
+  &__item
+    display: flex !important
+    flex-wrap: wrap
+    justify-content: space-between
+
+    &-image-part
+      width: 368px
+
+    &-text-part
+      width: 600px
+      padding-top: 54px
+
+    &-header
+      color: $text-dark
+      font-size: 36px
+      font-weight: 500
+      line-height: 40px
+      margin-bottom: 5px
+
+    &-text
+      color: $text-dark
+      font-size: 24px
+      font-weight: 400
+      line-height: 40px
+
+.portfolio
+  background: $blue
+  color: #ffffff
+
+  &__header
+    padding: 13px 170px 27px
+
+  &-slider
+
+    .slick-arrow
+      width: 50px
+      height: 50px
+      border: 2px solid #d7e4f3
+      border-radius: 50%
+      background: transparent
+      color: #d7e4f3
+      line-height: 46px
+      text-align: center
+      font-size: 20px
+      top: -80px
+
+      &:hover
+        border-color: #ffffff
+
+        &::before
+          color: #ffffff
+
+      &.slick-prev
+        left: 367px
+
+        &::before
+          margin-left: -2px
+
+      &.slick-next
+        right: 367px
+
+        &::before
+          margin-right: -2px
+
+  &-items
+    display: flex !important
+    flex-wrap: wrap
+    justify-content: center
+    align-items: flex-start
+
+  &__item
+    width: 25%
+
+    &-link
+      display: block
+      line-height: 0
+      position: relative
+
+      &::after
+        @include pseudo
+        width: 100%
+        height: 100%
+        background: rgba($text-dark, .75) url('../img/icon-zoom.svg') no-repeat center
+        top: 0
+        left: 0
+        z-index: 10
+        opacity: 0
+
+      &:hover::after
+        opacity: 1
+
+    &-image
+      width: 100%
+      height: 410px
+      object-fit: cover
+
+.scheme
+  padding: 53px 0 100px
+
+  &__header
+    color: $red
+    margin-bottom: 67px
+
+  &-items
+    margin-bottom: -60px
+
+  &__item
+    @include flex
+    justify-content: space-between
+    align-items: center
+    width: 635px
+    margin-bottom: 60px
+
+    &-image-part
+      width: 100px
+      height: 100px
+      background-color: $red
+      border-radius: 50%
+      @include flex
+      justify-content: center
+      align-items: center
+      position: relative
+
+      &::after
+        @include pseudo
+        width: 0
+        height: 60px
+        border-right: 2px dashed $red
+        left: 50%
+        transform: translateX(-50%)
+        top: 100%
+
+    &:last-child .scheme__item-image-part::after
+      content: none
+
+    &-text-part
+      width: 500px
+      color: $text-dark
+      font-size: 24px
+      font-weight: 400
+      line-height: 30px
+
+      span
+        font-weight: 700
+
+    &:nth-child(odd)
+      margin-left: auto
+
+    &:nth-child(even)
+      flex-direction: row-reverse
+      text-align: right
+
+.manufacturers
+  background: $bg
+  padding: 37px 0 80px
+
+  &__header
+    color: $text-dark
+    font-size: 36px
+    font-weight: 500
+    line-height: 60px
+    margin-bottom: 43px
+
+  &__inner
+    @include flex
+    justify-content: space-between
+
+  &__half
+    width: calc(50% - 15px)
+
+  &-items
+    height: 480px
+    background: #ffffff
+    border-radius: 0 0 4px 4px
+    text-align: center
+    @include flex
+    flex-direction: column
+    justify-content: space-around
+    padding: 30px 0
+
+    &__header
+      background: $text-dark
+      color: #ffffff
+      line-height: 60px
+      border-radius: 4px 4px 0 0
+      text-align: center
+      font-size: 24px
+      position: relative
+
+      &::after
+        @include pseudo
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 15px 15px 0 15px
+        border-color: $text-dark transparent transparent transparent
+        left: 50%
+        transform: translateX(-50%)
+        bottom: -15px
+
+  &__item
+    line-height: 0
+
+.clients
+  padding: 37px 0 76px
+
+  .slick-arrow
+    width: 50px
+    height: 50px
+    border: 2px solid $arrow
+    border-radius: 50%
+    background: transparent
+    color: $arrow
+    line-height: 46px
+    text-align: center
+    font-size: 20px
+
+    &:hover
+      border-color: $red
+
+      &::before
+        color: $red
+
+    &.slick-prev::before
+      margin-left: -2px
+
+    &.slick-next::before
+      margin-right: -2px
+
+  &__header
+    color: $text-dark
+    font-size: 36px
+    font-weight: 500
+    line-height: 60px
+    margin-bottom: 43px
+
+  &-items
+    @include flex
+    justify-content: space-between
+    align-items: flex-start
+
+  &__item
+    width: calc(100% / 6 - 15px)
+    text-align: center
+
+    &-image-part
+      height: 160px
+      @include flex
+      justify-content: center
+      align-items: center
+      margin-bottom: 4px
+
+    &-text-part
+      line-height: 20px
+
+.calculation
+  padding: 46px 0 51px
+  background: url('../img/calculation-bg.png') no-repeat top center
+  background-size: cover
+  color: #ffffff
+
+  &__header
+    font-size: 36px
+    font-weight: 700
+    line-height: 40px
+    margin-bottom: 51px
+
+.main-footer
+
+  &-top
+    background: $text-dark
+    color: #ffffff
+    padding: 29px 0 51px
+
+    &__inner
+      @include flex
+      justify-content: space-between
+      align-items: flex-start
+
+  &__contacts
+    padding-top: 9px
+
+    a
+      font-weight: 700
+      color: #ffffff
+
+      &::before
+        color: $yellow
+
+  &__info
+    padding-top: 10px
+
+    &-link
+      color: $yellow
+      border-bottom: 1px solid
+
+      &:hover
+        border-bottom-color: transparent
+
+  &-bottom
+    background: #19233e
+
+    &__inner
+      @include flex
+      justify-content: space-between
+      align-items: center
+
+    p
+      color: #ffffff
+      font-size: 14px
+      line-height: 50px
+
+    a
+      text-transform: uppercase
+      color: #ffffff
+      border-bottom: 1px solid
+
+      &:hover
+        border-bottom-color: transparent
+
+#top
+  color: #ffffff
+  background: $red
+  text-align: center
+  line-height: 50px
+
+  &::after
+    background: #ffffff

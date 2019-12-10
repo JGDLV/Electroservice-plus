@@ -1,0 +1,416 @@
+@media (max-width: 1900px)
+  .portfolio-slider .slick-arrow
+    top: 50%
+
+    &.slick-prev
+      left: 10px
+
+    &.slick-next
+      right: 10px
+
+  .portfolio__item-image
+    height: auto
+
+// 1900px
+
+@media (max-width: 1230px)
+  .container
+    padding: 0 15px
+
+  .main-header-top
+    padding: 20px 0
+
+    &__inner
+      align-items: center
+
+  .main-header__email
+    margin: 0
+
+  .main-header__contacts
+    margin: 0
+
+  .intro
+    padding: 30px 0
+
+    &__header
+      font-size: 48px
+      line-height: normal
+
+    &__subheader
+      margin-bottom: 40px
+
+    &-form
+      justify-content: center
+      align-items: center
+      text-align: center
+
+      & > *
+        margin: 10px 15px
+        width: 270px
+
+      &__header
+        text-align: center
+        width: 100% !important
+
+      &__submit
+        order: 5
+
+      &__text
+        order: 6
+        width: 100%
+
+      &__file
+        text-align: left
+
+  .promo
+    padding-top: 30px
+
+    &__image-part
+      margin-top: 0
+      width: 100%
+      text-align: center
+      padding-top: 30px
+
+    &__image
+      width: 350px
+
+    &__text-part
+      width: 100%
+      padding: 30px 0 40px
+
+  h1, h2
+    font-size: 40px !important
+    line-height: normal !important
+
+  .cost
+
+    &__header
+      padding: 15px 20px 20px
+
+    &__item-info
+      width: 100%
+      padding-top: 15px
+
+    &__item-image-part::before
+      background: rgba(0, 0, 0, 0.4)
+
+    &-text-block
+      padding: 8px 0
+
+      &__inner
+        justify-content: center
+
+      &__text
+        line-height: normal
+        margin: 15px
+
+        &::before
+          top: 0
+          transform: none
+
+      &__button
+        margin: 15px
+
+  .features
+    padding: 30px 0
+
+    &__item-text br
+      display: none
+
+  .additional
+    padding: 30px 0
+
+  .specials
+    padding: 30px 0
+
+    &__item-text-part
+      width: calc(100% - 400px)
+      padding-top: 30px
+
+  .portfolio__header
+    padding: 15px 15px 20px
+
+  .portfolio__item-image
+    height: auto
+
+  .scheme
+    padding: 30px 0
+
+  .manufacturers
+    padding: 30px 0
+
+  .clients
+    padding: 30px 0
+
+  .calculation
+    padding: 30px 0
+
+  .main-footer-top
+    padding: 30px 0
+
+  .main-menu__link
+    line-height: 1
+    padding: 15px
+
+// 1230px
+
+@media (max-width: 1200px)
+  .scheme-items
+    margin-bottom: -50px
+    @include flex
+
+  .scheme__item
+    margin: 0 0 50px !important
+    width: 50%
+    flex-direction: row !important
+
+    &-image-part::after
+      content: none
+
+    &-text-part
+      width: calc(100% - 130px)
+      text-align: left
+      padding-right: 15px
+
+      br
+        display: none
+
+// 1200px
+
+@media (max-width: 1100px)
+  .additional
+    text-align: center
+
+    &__header
+      text-align: center
+
+    &__text-part
+      width: 100%
+      margin-bottom: 50px
+
+      br
+        display: none
+
+    &__image-part
+      width: 100%
+
+  .price
+    margin: 0
+
+  .clients__header
+    margin-bottom: 30px
+
+  .clients-items
+    padding: 0 60px
+
+  .main-footer
+
+    &-top__inner
+      justify-content: center
+
+    .logo
+      width: 100%
+      text-align: center
+      margin-bottom: 20px
+
+      & ~ *
+        margin: 0 25px
+
+// 1100px
+
+@media (max-width: 1000px)
+  .specials__item
+    text-align: center
+
+    &-image-part, &-text-part
+      width: 100%
+
+    &-image
+      margin: auto
+
+  .manufacturers-items__header
+    line-height: normal
+    padding: 10px 20px 15px
+
+// 1000px
+
+@media (max-width: 900px)
+  .main-footer .logo ~ *
+    margin: 0 0 20px
+    width: 100%
+    text-align: center
+
+// 900px
+
+@media (max-width: 850px)
+  .main-header-top__inner
+    justify-content: center
+
+    & > *
+      margin: 10px 20px
+
+  .main-header__contacts
+    width: 100%
+    text-align: center
+
+  h1, h2, .promo__text_big, .cost__item-header, .specials__item-header
+    font-size: 30px !important
+
+    br
+      display: none
+
+  .intro__subheader
+    font-size: 24px
+
+  .cost__item-text
+    font-size: 20px
+    line-height: normal
+
+  .features__subheader
+    font-size: 24px
+    line-height: normal
+
+  .scheme__header
+    margin-bottom: 30px
+
+  .scheme__item
+    width: 100%
+
+// 850px
+
+@media (max-width: 750px)
+  .cost__item
+    width: 100%
+    height: auto
+    text-align: center
+
+    &-bottom
+      left: 0
+      right: 0
+
+    &-price
+      margin: auto
+
+    &-text-part
+      padding: 29px 20px 160px 20px
+
+  .features-items
+    margin-bottom: -30px
+
+  .features__item
+    width: 100%
+    margin-bottom: 30px
+
+    &-image-part
+      width: 140px
+      height: 140px
+
+  .portfolio__item
+    width: 100%
+
+    &:first-child ~ &
+      display: none
+
+  .manufacturers
+    padding-bottom: 10px
+
+    &__half
+      width: 100%
+
+    &-items
+      padding: 30px
+      height: auto
+      margin-bottom: 30px
+
+    &__item-image
+      margin: 20px 0
+
+// 750px
+
+@media (max-width: 600px)
+  .intro-form > *
+    width: 90%
+    margin: 10px 0
+
+  .promo__text_big
+    line-height: normal
+
+  .price
+    font-size: 20px
+    padding: 0 10px
+
+  .specials__item-header
+    font-size: 26px !important
+
+  .specials__item-text
+    font-size: 20px
+    line-height: 1.5
+
+  .menu-toggle
+    display: flex
+    margin: auto
+    border-radius: 4px
+
+  .main-menu
+    margin-top: 15px
+
+  .main-menu-items
+    display: none
+    width: 100%
+    top: calc(100% + 15px)
+
+// 600px
+
+@media (max-width: 500px)
+  .specials-items
+    padding: 0 20px
+
+  .specials .slick-arrow
+    top: 0
+    transform: none
+
+  .manufacturers__item-image
+    max-width: 160px
+
+// 500px
+
+@media (max-width: 400px)
+  .scheme__item
+    text-align: center
+
+    &-image-part
+      margin: auto
+
+    &-text-part
+      width: 100%
+      padding: 15px 0 0
+      text-align: center
+
+  .manufacturers-items__header, .scheme__item-text-part
+    font-size: 20px
+    line-height: normal
+
+// 400px
+
+@media (max-width: 400px)
+  h1, h2, .promo__text_big, .cost__item-header, .specials__item-header
+    font-size: 28px !important
+
+  .main-header-top__inner > *
+    margin: 10px 0
+
+  .intro__subheader
+    max-width: 100%
+    background-size: contain
+
+  .intro-form__header
+    font-size: 22px
+    line-height: normal
+
+  .cost__item-info
+    font-size: 20px
+
+  .intro-form > *
+    width: 100%
+
+// 400px
