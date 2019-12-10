@@ -80,7 +80,7 @@ $(document).ready(function () {
     const selectCurrent = selectBlock.find('div[class*="__current"]');
     const selectItems = selectBlock.find('ul');
     const selectItem = selectBlock.find('li');
-    const inputVal = selectBlock.find('input');
+    const input = selectBlock.find('input');
 
     selectBlock.on('click', function () {
       selectItems.slideToggle(200);
@@ -94,7 +94,7 @@ $(document).ready(function () {
       const html = $(this).html();
       const text = $(this).text();
       selectCurrent.html(html);
-      inputVal.val(text);
+      input.val(text);
     });
   });
 
