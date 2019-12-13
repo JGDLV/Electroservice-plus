@@ -533,6 +533,10 @@ input[type="submit"] {
           animation-fill-mode: forwards;
 }
 
+.wow {
+  visibility: hidden;
+}
+
 body {
   font-family: 'Harmonia', sans-serif;
   color: #74839c;
