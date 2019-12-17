@@ -606,6 +606,7 @@ body {
 
 .main-header {
   background: url("../img/header-bg.png") no-repeat top center;
+  background-attachment: fixed;
   background-size: cover;
   color: #ffffff;
 }
